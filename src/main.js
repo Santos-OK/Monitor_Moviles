@@ -20,6 +20,9 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
+import './theme/tabs.css';
+import './theme/variables.css';
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------

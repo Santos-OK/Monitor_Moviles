@@ -6,29 +6,20 @@
 
 <script>
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 export default {
   name: "App",
   components: { IonApp, IonRouterOutlet },
-
   created() {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, "omar@santos.com", "omarsantos333")
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        if (user == null) {
-          console.log("no autenticado")
-        }
-        else {
-          console.log("usuario autenticado", user);
-        }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
-  },
-}
+    // Esperar a que Firebase resuelva el estado inicial
+    // Si no hay usuario, el router guard lo manda al login automáticamente
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        this.$router.replace('/login');
+      }
+    });
+  }
+};
 </script>

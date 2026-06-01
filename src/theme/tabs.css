@@ -1,0 +1,37 @@
+/* Tabla / Grid */
+ion-col > div {
+  background-color: #1e3355;
+  border: 1px solid #2e4a70;
+  color: #dce8f8;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+ion-row:first-child ion-col > div {
+  background-color: #162038;
+  color: #7eaadd;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Items / Inputs */
+ion-item {
+  --background: #1e3355;
+  --border-color: #2e4a70;
+  --color: #dce8f8;
+}
+
+ion-input {
+  --color: #dce8f8;
+  --placeholder-color: #6a84a8;
+}
+
+/* Botones */
+ion-button {
+  --background: #1e3a5f;
+  --background-activated: #254d80;
+  --color: #dce8f8;
+  --border-radius: 8px;
+}
